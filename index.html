@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <!-- Bootstrap 4 CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-  <title>Hangman</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Ahorcado Web</title>
+        
 </head>
-<body>
-<div class="container">
-  <h1 class="text-center">Hangman</h1>
-  <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
-  <div class="text-center">
-    <img id='hangmanPic' src="#" alt="">
-    <p>Guess the Programming Language:</p>
-    <p id="wordSpotlight">The word to be guessed goes here</p>
-    <div id="keyboard"></div>
-    <button class="btn btn-info" onClick="reset()">Reset</button>
-  </div> 
-</div>
+<body class="container">
+    <header class="item">
+        <!-- Specifies a header for a document or section -->
+        <img src="IMG/Logo.svg" alt="alura logo" class="alura-logo">
+        <h1 class="first-title">Ahorcado Web!</h1>
+        </header>
 
-<script src="JS/hangman.js"></script>
+    <main class="item">
+        <section>
+            <h2 class="title">Bienvenido a Ahorcado Web</h2>
+            <br>
+            <a class="fcc-btn" href="game.html" id="calcular">Iniciar Juego!</a> 
+            <a class="fcc-btn" href="addWord.html">Agregar Palabra</a>  
+        </section>
+    </main>
+
+    <section class="item left-side"></section>
+
+    <section class="item right-side"></section>
+
+    <footer class="item">
+        <small class="center">Copyright © 2022 - Franco Malgarise</small>
+    </footer>
+        
+    <script src="JS/main_btn.js"></script>
 </body>
 </html>
