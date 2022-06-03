@@ -28,16 +28,13 @@ header{
 .left-side{
     grid-area: sidebar-1;
     background-color: #87b6a7ff; /* $green-sheen: */
-    
 }
 
 main{
     grid-area: content;
     background-color: #87b6a7ff; /* $green-sheen: */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
 .right-side{
     grid-area: sidebar-2;
     background-color: #87b6a7ff; /* $green-sheen: */
@@ -48,7 +45,6 @@ footer{
     display: flex;    
     justify-content: center;
     height: 22px;
-
 }
 
 .alura-logo{
@@ -63,27 +59,52 @@ footer{
     margin: 20px 0px;
 }
 
-.title{
+.principal{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+#figura{
+    max-width: 150px;
+    max-height: 200px;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.texto-indicativo{
     display: flex;
     align-items:center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
-#second-title{
+#palabraXAdivinar{
     display: flex;
-    align-items:flex-start;
+    flex-wrap: wrap;
+    align-items:center;
     justify-content: center;
+    margin-bottom: 10px;
+}
+
+#teclado{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .fcc-btn{
     box-sizing: border-box;
-    background-color: #e3f09bff; /* $key-lime:*/
-    padding: 15px 25px;
+    background-color: #e3f09bff; /* $key-lime: */
+    padding: 10px 10px;
     text-decoration: none;
-    border: 2px solid #5b5941ff; /* $ebony:*/
+    border: 2px solid #5b5941ff; /* $ebony: */
     border-radius: 10px;
 }
 
 .fcc-btn:hover{
-    background-color:#f7d08aff; /* $deep-champagne:*/
+    background-color:#f7d08aff; /* $deep-champagne: */
 }

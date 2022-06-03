@@ -9,26 +9,26 @@
     <title>Ahorcado</title>
 </head>
 <body class="container">
-    <header class="item">
+    <header>
         <!-- Specifies a header for a document or section -->
         <img src="IMG/Logo.svg" alt="alura logo" class="alura-logo">
         <h1 class="title">Ahorcado Web!</h1>
         </header>
 
-    <main class="item">
-        <section>
-            <canvas width="200" height="300" id="figura"></canvas> 
-            <h2 class="title second-title">Ingrese una letra para comenzar</h2>
+    <main>
+        <section class="principal">
+            <canvas width="150" height="200" id="figura"></canvas> 
+            <h2 class="texto-indicativo">Ingrese una letra para comenzar</h2>
             <p id="palabraXAdivinar"></p>
             <br>
             <div id="teclado"></div>
-            <button class="btn btn-info" onClick="reiniciar()">Reiniciar</button>
+            <button class="btn fcc-btn" onClick="reiniciar()">Reiniciar</button>
         </section>
     </main>
 
-    <section class="item left-side"></span></section>
+    <section class="left-side"></span></section>
 
-    <section class="item right-side">Errores Cometidos: <br>
+    <section class="right-side">Errores Cometidos: <br>
         <span id='errores'>0</span> of <span id='maxErrores'></span>
     </section>
 

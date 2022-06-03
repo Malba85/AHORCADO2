@@ -1,10 +1,11 @@
-const palabras = ["casa", "arbol",  "pelota", "gato", "auto"]; // PALABRAS DE BASE
+var palabras = ["CASA", "ARBOL", "PELOTA", "GATO", "AUTO"]; // PALABRAS DE BASE
 
 let palabra = "";  //PALABRA OBJETIVO
 let adivinado = []; 
 let errores = 0;
 let maxErrores = 6;
 let estadoPalabra = null;
+let colores = ["#B36C49","#914F3B","#6F362D","#4E211F","#2C1112"]
 
 function palabraAleatoria(){
     palabra = palabras[Math.floor(Math.random()*palabras.length)]; //FUNCION SELECC. ALEATORIA DE PALABRA
@@ -15,7 +16,7 @@ function generarBotones() {
     let teclas = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('').map(letra =>
       ` 
         <button
-          class="btn btn-lg btn-primary m-2" 
+          class="fcc-btn" 
           id='` + letra + `'
           onClick="seleccLetra('` + letra + `')"
         >
@@ -31,7 +32,7 @@ function generarBotones() {
 function seleccLetra(letraElegida){
     adivinado.indexOf(letraElegida) === -1 ? adivinado.push(letraElegida) : null;
     document.getElementById(letraElegida).setAttribute("disabled", true);
-    
+        
     //SI LA LETRA ELEGIDA SE ENCUENTRA EN LA PALABRA OBJETIVO
     if (palabra.indexOf(letraElegida) >= 0){
         palabraXAdivinar();
@@ -46,27 +47,26 @@ function seleccLetra(letraElegida){
 
 function actualizarCanvas(){
     if( errores === 1){
-        pincel.beginPath();  //CABEZA
-        pincel.arc(100,115,15,90,Math.PI*2,true);
-        pincel.strokeStyle ='green';
-        pincel.stroke();
+    pincel.beginPath();  //CABEZA
+    pincel.arc(75, 62,12,90,Math.PI*2,true);
+    pincel.strokeStyle = "green";
+    pincel.stroke();
     }else if( errores === 2){
-        dibujarAhorcado(100,130,100,190); //TORSO
+        dibujarAhorcado(75,74,75,130); //TORSO
     }else if( errores === 3){
-        dibujarAhorcado(100,190,75,230); //PIERNAIZ 
+        dibujarAhorcado(75,130,50,170); //PIERNAIZ 
     }else if( errores === 4){
-        dibujarAhorcado(100,190,125,230); //PIERNADE
+        dibujarAhorcado(75,130,100,170); //PIERNADE
     }else if( errores === 5){
-        dibujarAhorcado(100,140,75,180); //BRAZOIZ
+        dibujarAhorcado(75,80,50,110); //BRAZOIZ
     }else if( errores === 6){
-        dibujarAhorcado(100,140,125,180); //BRAZODE
+        dibujarAhorcado(75,80,100,110); //BRAZODE
     }
 }
 
 // FUNCION PARA CONVERTIR LA PALABRA OBJETIVO EN GUIONES Y AGREGAR LETRAS CORRECTAS
 function palabraXAdivinar(){
-    estadoPalabra = palabra.split("").map(letra => (adivinado.indexOf(letra) >= 0 ? letra : " _ ")).join('');
-    
+    estadoPalabra = palabra.split('').map(letter => (adivinado.indexOf(letter) >= 0 ? letter : " _ ")).join('');
     document.getElementById("palabraXAdivinar").innerHTML = estadoPalabra;
 }
 
@@ -94,8 +94,7 @@ function chequearSiPerdi(){
 function reiniciar() {
     errores = 0;
     adivinado = [];
-    //document.getElementById('hangmanPic').src = './images/0.jpg';
-    
+        
     palabraAleatoria();
     generarBotones();
     palabraXAdivinar();
