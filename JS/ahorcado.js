@@ -5,7 +5,6 @@ let adivinado = [];
 let errores = 0;
 let maxErrores = 6;
 let estadoPalabra = null;
-let colores = ["#B36C49","#914F3B","#6F362D","#4E211F","#2C1112"]
 
 function palabraAleatoria(){
     palabra = palabras[Math.floor(Math.random()*palabras.length)]; //FUNCION SELECC. ALEATORIA DE PALABRA
@@ -47,10 +46,11 @@ function seleccLetra(letraElegida){
 
 function actualizarCanvas(){
     if( errores === 1){
-    pincel.beginPath();  //CABEZA
-    pincel.arc(75, 62,12,90,Math.PI*2,true);
-    pincel.strokeStyle = "green";
-    pincel.stroke();
+        pincel.beginPath();  //CABEZA
+        pincel.arc(75, 62,12,90,Math.PI*2,true);
+        pincel.strokeStyle = "#B36C49";
+        pincel.stroke();
+
     }else if( errores === 2){
         dibujarAhorcado(75,74,75,130); //TORSO
     }else if( errores === 3){
@@ -63,7 +63,6 @@ function actualizarCanvas(){
         dibujarAhorcado(75,80,100,110); //BRAZODE
     }
 }
-
 // FUNCION PARA CONVERTIR LA PALABRA OBJETIVO EN GUIONES Y AGREGAR LETRAS CORRECTAS
 function palabraXAdivinar(){
     estadoPalabra = palabra.split('').map(letter => (adivinado.indexOf(letter) >= 0 ? letter : " _ ")).join('');

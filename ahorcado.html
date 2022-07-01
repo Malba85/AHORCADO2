@@ -12,24 +12,28 @@
     <header>
         <!-- Specifies a header for a document or section -->
         <img src="IMG/Logo.svg" alt="alura logo" class="alura-logo">
-        <h1 class="title">Ahorcado Web!</h1>
-        </header>
+        <h1 class="main-title">Ahorcado Web!</h1>
+    </header>
 
     <main>
         <section class="principal">
             <canvas width="150" height="200" id="figura"></canvas> 
             <h2 class="texto-indicativo">Ingrese una letra para comenzar</h2>
             <p id="palabraXAdivinar"></p>
-            <br>
+            
             <div id="teclado"></div>
-            <button class="btn fcc-btn" onClick="reiniciar()">Reiniciar</button>
+            
         </section>
     </main>
 
-    <section class="left-side"></span></section>
+    <section class="left-side">
+        <button class="btn fcc-btn left-buttons" onClick="reiniciar()">Reiniciar <br> Juego</button>
+        <button class="btn fcc-btn left-buttons" id="btn-inicio" >Agragar <br> Palabra</button>
+    </section>
 
-    <section class="right-side">Errores Cometidos: <br>
-        <span id='errores'>0</span> of <span id='maxErrores'></span>
+    <section class="right-side">
+        <p>Errores Cometidos:</p>
+        <p><span id='errores'>0</span> de <span id='maxErrores'></span></p>
     </section>
 
     <footer class="item">
@@ -38,6 +42,7 @@
     
     <script src="JS/figura.js"></script>
     <script src="JS/ahorcado.js"></script>
+    <script src="JS/botones.js"></script>
     
 </body>
 </html>

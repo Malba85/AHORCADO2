@@ -8,26 +8,32 @@
 }
 
 .container{
+    height:100vh;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr; 
-    grid-template-rows: 68px repeat(auto-fit, 360px) 22px;
+    grid-template-rows: 68px fit-content(auto 50%) fit-content(auto 50%) 36.6px; 
     grid-template-areas: 
-     "header   header   header"
+     "header   header   header"     /*----ACOMODAR EL CONTENT PARA OCUPAR TODO EL ESPACIO---- */
     "sidebar-1 content sidebar-2"
     "sidebar-1 content sidebar-2"
      "footer   footer   footer";
+    
 }
 
 header{
     grid-area: header;
     background-color: #f79f79ff; /* $light-salmon:*/
-    height: 68px;
+    max-height: 68px;
     display: flex;
     justify-content: flex-start;
 }
 .left-side{
     grid-area: sidebar-1;
     background-color: #87b6a7ff; /* $green-sheen: */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 main{
@@ -38,13 +44,17 @@ main{
 .right-side{
     grid-area: sidebar-2;
     background-color: #87b6a7ff; /* $green-sheen: */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+
 footer{
     grid-area: footer;
+    height: 36px;
+    
     background-color: #5b5941ff; /* $ebony:*/
-    display: flex;    
-    justify-content: center;
-    height: 22px;
+    align-self: flex-end;
 }
 
 .alura-logo{
@@ -59,33 +69,38 @@ footer{
     margin: 20px 0px;
 }
 
+.main-title{
+    align-self: center;
+    font-size: 6vh;
+}
+
 .principal{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    flex-wrap: nowrap;   /*-----AGREGAR ESPACIO ENTRE ELEMENTOS------- */
+    align-content: space-between;
 }
 
 #figura{
     max-width: 150px;
     max-height: 200px;
     align-self: center;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 }
 
 .texto-indicativo{
     display: flex;
     align-items:center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
 }
 
 #palabraXAdivinar{
     display: flex;
-    flex-wrap: wrap;
     align-items:center;
     justify-content: center;
-    margin-bottom: 10px;
+    font-size: 6vh ;
+    margin-bottom: 1em;
 }
 
 #teclado{
@@ -93,7 +108,6 @@ footer{
     flex-wrap: wrap;
     align-items:center;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .fcc-btn{
@@ -107,4 +121,32 @@ footer{
 
 .fcc-btn:hover{
     background-color:#f7d08aff; /* $deep-champagne: */
+}
+
+.center{
+    display: flex;    
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.left-buttons{
+    margin-top: 1em;
+    width: 80px; 
+    height: 60px;
+}
+
+.right-side p{
+    margin-top: 1em;
+    align-self:center;
+    text-align: center;
+}
+
+.right-side p span{
+    font-size: 1.5em;
+}
+
+/* ESTILO PARA INDEX.HTML */
+
+.welcome-title{
+    margin-top: 2em;
 }
